@@ -5,33 +5,47 @@ public class Student {
     private double gpa;
 
 // Constructor
-    public Student(String name, int id, double gpa) {
-    this.name = name;
-    this.id = id;
-    this.gpa = gpa;
-    }
+  public Student(String studentName, int studentId, double studentGPA) {
+    this.name = studentName;
+    this.id = studentId;
+    this.gpa = studentGPA;
+  }
 
 // put getters here
-    public String getName() { return name; }
-    public int getId() { return id; }
-    public double getGpa() { return gpa; }
+    public String getStudentName() {
+        return this.name; 
+    }
 
+    public int getStudentId() {
+        return this.id;
+    }
+    public double getStudentGpa() {
+        return this.gpa;
+    }
+
+   
 // put setters here
-    public void setName(String name) { this.name = name; }
-    public void setId(int id) { this.id = id; }
-    public void setGpa(double gpa) { this.gpa = gpa; }
-
+    public void setGpa(double newGpa){
+        this.gpa = newGpa;
+    }
 //other member functions (methods here)
     public void displayStudent() {
-        System.out.println("The student "+ this.name + " has an id of " + id + " and a gpa of "+ gpa +".");
+        System.out.println("The student "+ this.name + 
+        " has an id of " + this.id + " and a gpa of "+ this.gpa +".");
     }
 
     public static void main(String[] args) {
         
     //create a student here
-    Student student1 = new Student("Lisa Waddell", 54321, 2.5); 
+    Student student1 = new Student("Lisa Waddell", 
+    54321, 2.5); 
+    
     //call the displayStudent method here
     student1.displayStudent();
+
+    student1.setGpa(3.0);
+    System.out.println(student1.getStudentGpa());
+    System.out.println(student1.getStudentName());
         
     }
 }
